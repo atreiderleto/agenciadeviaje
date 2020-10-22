@@ -1,7 +1,15 @@
 import express from 'express';
 import router from './routes/index.js';
+import db from './config/db.js';
 
 const app = express();
+
+
+// conectar la DB
+
+db.authenticate()
+    .then(() => console.log('Base de Datos Conectada'))
+    .catch(error => console.log('error'));
 
 //definir puerto
 const port = process.env.port || 4000;
@@ -10,7 +18,7 @@ const port = process.env.port || 4000;
 
 app.set('view engine', 'pug');
 
-//Obtener el Ano actual
+//Obtener el Año actual
 
 app.use((req, res, next) => {
 
