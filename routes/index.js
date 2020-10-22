@@ -1,0 +1,42 @@
+import express from 'express';
+
+const router = express.Router();
+
+router.get('/', (req, res)=> { // req - es lo que enviamos y res - es lo que nos envia node
+    res.render('inicio', {
+
+        pagina: 'Inicio'
+
+    });
+});
+
+router.get('/nosotros', (req, res)=> { 
+    res.render('nosotros', {
+
+        pagina: 'Nosotros'
+
+    });
+});
+
+
+
+router.get('/viajes', (req, res)=> { 
+    res.render('viajes', {
+
+        pagina: 'Viajes'
+
+    });
+});
+
+router.get('/testimoniales', (req, res)=> { 
+    res.render('testimoniales', {
+
+        pagina: 'Testimoniales'
+
+    });
+});
+
+
+
+
+export default router;
