@@ -27,7 +27,7 @@ export const Viaje = db.define('viajes', {
         type: Sequelize.STRING
     },
 
-    disponible:{
+    disponibles:{
         type: Sequelize.STRING
     },
 

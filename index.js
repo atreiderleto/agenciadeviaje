@@ -9,14 +9,17 @@ const app = express();
 
 db.authenticate()
     .then(() => console.log('Base de Datos Conectada'))
-    .catch(error => console.log('error'));
+    .catch(error => console.log(error));
+
 
 //definir puerto
 const port = process.env.port || 4000;
 
+
 //habilitar pug
 
 app.set('view engine', 'pug');
+
 
 //Obtener el Año actual
 
@@ -28,6 +31,11 @@ app.use((req, res, next) => {
     res.locals.nombresitio = "Agencia de Viajes";
     next();
 });
+
+//Agregar body parcer para leer los datos del formulario
+
+app.use(express.urlencoded({extended: true}));
+
 
 //definir la carpeta publica
 
